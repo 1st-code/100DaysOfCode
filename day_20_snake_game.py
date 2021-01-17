@@ -12,7 +12,7 @@ def main():
     while GAME_ON:
 
         turtle.update()
-        time.sleep(.1)
+        time.sleep(.2)
 
         snake.move()
 
@@ -26,8 +26,9 @@ def main():
 GAME_ON = True
 
 screen = Screen()
-screen.setup(width=600, height=600)
+screen.setup(width=640, height=680)
 screen.bgcolor("#555")
+screen.bgpic("gfx/snake_bg.png")
 screen.title("Python Snake Game")
 screen.tracer(0)
 
