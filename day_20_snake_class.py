@@ -22,18 +22,24 @@ class Snake:
     def new_snake(self):
         """Creates a list of SNAKE segments"""
 
-        x, y = 0, 0
+        num, x, y = 3, 0, 0
 
-        for i in range(10):
+        self.add_segment(num, x, y)
+        self.BODY[0].shape(snake_gfx[8])
+
+    def add_segment(self, num, x, y):
+        for i in range(num):
             self.BODY.append(Turtle("square"))
-            self.BODY[i].color("white")
-            self.BODY[i].shape(snake_gfx[0])
-            self.BODY[i].penup()
-            self.BODY[i].setpos(x, y)
-            x -= 20
-        else:
-            self.BODY[0].shape(snake_gfx[8])
-            # self.BODY[-1].shape(snake_gfx[3])
+            self.BODY[-1].color("white")
+            self.BODY[-1].shape(snake_gfx[0])
+            self.BODY[-1].penup()
+            self.BODY[-1].setpos(x, y)
+
+    def extend(self):
+        """Adds a new segment to the Snake"""
+
+        x, y = self.BODY[-1].pos()
+        self.add_segment(1, x, y)
 
     def move(self):
         """Sets Snake movement"""
