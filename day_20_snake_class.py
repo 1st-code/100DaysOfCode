@@ -33,28 +33,14 @@ class Snake:
             x -= 20
         else:
             self.BODY[0].shape(snake_gfx[8])
-            self.BODY[-1].shape(snake_gfx[3])
+            # self.BODY[-1].shape(snake_gfx[3])
 
     def move(self):
         """Sets Snake movement"""
 
-        prev_x, prev_y = self.BODY[-1].pos()  # Tail position
-
         for i in range(len(self.BODY) - 1, 0, -1):  # BODY segments follow BODY[0]
             x, y = self.BODY[i - 1].pos()
             self.BODY[i].goto(x, y)
-        else:
-            new_x, new_y =  self.BODY[-1].pos()  # New Tail position
-
-            # adjust tail gfx depending on direction of tail
-            if new_x > prev_x:
-                self.BODY[-1].shape(snake_gfx[3])
-            elif new_y > prev_y:
-                self.BODY[-1].shape(snake_gfx[2])
-            elif new_y < prev_y:
-                self.BODY[-1].shape(snake_gfx[1])
-            elif new_x < prev_x:
-                self.BODY[-1].shape(snake_gfx[4])
 
         self.head.forward(20)
 
@@ -83,7 +69,7 @@ class Snake:
 
         x, y = self.head.position()
 
-        if not (-310 < x < 310) or not (-340 < y < 300):
+        if not (-305 < x < 305) or not (-305 < y < 305):
             return True
         else:
             return False
