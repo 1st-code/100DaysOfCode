@@ -5,3 +5,7 @@
 <br />
 <a href="https://repl.it/talk/share/Snake-Game/115729">https://repl.it/talk/share/Snake-Game/115729</a>
 
+
+On clicking "Run" click window to be able to use arrow keys/wsad to move snake.
+
+It may be necessary to drag window lower, this can be done by dragging bottom part of window.
