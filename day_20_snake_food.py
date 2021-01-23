@@ -1,5 +1,5 @@
 import turtle
-from turtle import Turtle, register_shape
+from turtle import Turtle
 from random import randint
 
 CHERRY_GFX = 'gfx/cherry.gif'

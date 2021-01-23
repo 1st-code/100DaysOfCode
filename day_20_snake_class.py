@@ -7,6 +7,7 @@ DOWN = 270
 LEFT = 180
 RIGHT = 0
 
+turtle_cache = []  # List to cache old Turtle objects
 
 class Snake:
 
@@ -29,7 +30,10 @@ class Snake:
 
     def add_segment(self, num, x, y):
         for i in range(num):
-            self.BODY.append(Turtle("square"))
+            if len(turtle_cache) > 0:
+                self.BODY.append(turtle_cache.pop())
+            else:
+                self.BODY.append(Turtle("square"))
             self.BODY[-1].color("white")
             self.BODY[-1].shape(snake_gfx[0])
             self.BODY[-1].penup()
@@ -71,11 +75,28 @@ class Snake:
             self.BODY[0].shape(snake_gfx[8])  # Tail Head Gfx Right
 
     def is_hit(self):
-        """Checks if any segment of snake BODY is out of bounds"""
+        """Checks for collision"""
 
         x, y = self.head.position()
 
-        if not (-305 < x < 305) or not (-305 < y < 305):
+        for _ in self.BODY[1:]:  # check for collision with body
+            if _.distance(self.head) < 10:
+                return True
+
+        if not (-305 < x < 305) or not (-305 < y < 305):  # check if out of bounds
             return True
         else:
             return False
+
+    def reset_game(self):
+
+        for _ in self.BODY[3:]:
+            _.goto(0, 800)
+
+        while len(self.BODY) > 3:
+            turtle_cache.append(self.BODY.pop())  # Caches old Turtle objects in list
+
+        for _ in self.BODY:
+            _.goto(0, 0)
+            _.setheading(0)
+            self.right()
