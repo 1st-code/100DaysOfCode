@@ -6,5 +6,5 @@
 
 <li> It may be necessary to drag window lower, this can be done by dragging bottom part of window.
 
-<br />
+<br /><br /><br />
 <a href="https://repl.it/talk/share/Snake-Game/115729">https://repl.it/talk/share/Snake-Game/115729</a>
