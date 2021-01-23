@@ -10,6 +10,7 @@ except:
     temp_score = 0
 score_file_read.close()
 
+
 class Scoreboard(Turtle):
     def __init__(self):
         super().__init__()
