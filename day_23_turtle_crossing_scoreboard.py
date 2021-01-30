@@ -29,7 +29,7 @@ class Scoreboard(Turtle):
 
     def reset_score(self):
         self.clear()
-        self.level = 0
+        self.level = 1
         self.goto(-290, 280)
         self.color("#222")
         self.write(f"Level: {self.level}", align="left", font=FONT1)
