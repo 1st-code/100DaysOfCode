@@ -1,3 +1,14 @@
+version 0.3a
 
 - adjusted finish line y-coordinates
-- changed so level adjusts after player resets position
+- level display increases after player resets position
+
+version 0.2a
+
+- added game_loop function with option for time delay between refresh
+- level up screen flash notification
+- car overlap check, added condition to only move car if on same lane
+- car reset count fix
+- random car animation start frame
+- slow lanes
+
