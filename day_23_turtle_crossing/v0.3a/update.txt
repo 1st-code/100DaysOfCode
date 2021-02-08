@@ -1,0 +1,3 @@
+
+- adjusted finish line y-coordinates
+- changed so level adjusts after player resets position
