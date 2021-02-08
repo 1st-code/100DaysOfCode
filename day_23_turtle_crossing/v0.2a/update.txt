@@ -1,0 +1,7 @@
+
+- added game_loop function with option for time delay between refresh
+- level up screen flash notification
+- car overlap check, added condition to only move car if on same lane
+- car reset count fix
+- random car animation start frame
+- slow lanes
